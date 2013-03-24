@@ -17,7 +17,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+	UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]
+                                   initWithTarget:self
+                                   action:@selector(dismissKeyboard)];
+    
+    [self.view addGestureRecognizer:tap];
 }
 
 - (void)didReceiveMemoryWarning
@@ -33,12 +37,17 @@
     UIStoryboard *homeStoryboard = [UIStoryboard storyboardWithName:@"HomeStoryboard" bundle:nil];
     UIViewController* homeViewController = [homeStoryboard instantiateInitialViewController];
     
-    homeViewController.modalPresentationStyle = UIModalPresentationFormSheet;
-    [self presentViewController:homeViewController animated:YES completion:nil];
+    homeViewController.modalPresentationStyle = UIModalTransitionStyleCoverVertical;
+    self.modalPresentationStyle = UIModalTransitionStyleCoverVertical;
+    [self presentModalViewController:homeViewController animated:YES ];
 }
 - (IBAction)registerButton:(id)sender {
 }
 
 - (IBAction)loginButton:(id)sender {
+}
+-(void)dismissKeyboard {
+    [self.usernameTextField resignFirstResponder];
+    [self.passwordTextField resignFirstResponder];
 }
 @end

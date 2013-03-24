@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8CE8620316FA097600D72E53 /* cooltext963082801.png in Resources */ = {isa = PBXBuildFile; fileRef = 8CE8620216FA097600D72E53 /* cooltext963082801.png */; };
+		8CE8620516FA0A2A00D72E53 /* background_color.png in Resources */ = {isa = PBXBuildFile; fileRef = 8CE8620416FA0A2A00D72E53 /* background_color.png */; };
 		8CEBFCAF16E7BA9600D04CA5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CEBFCAE16E7BA9600D04CA5 /* UIKit.framework */; };
 		8CEBFCB116E7BA9600D04CA5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CEBFCB016E7BA9600D04CA5 /* Foundation.framework */; };
 		8CEBFCB316E7BA9600D04CA5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CEBFCB216E7BA9600D04CA5 /* CoreGraphics.framework */; };
@@ -38,6 +40,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8CE8620216FA097600D72E53 /* cooltext963082801.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cooltext963082801.png; sourceTree = "<group>"; };
+		8CE8620416FA0A2A00D72E53 /* background_color.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background_color.png; sourceTree = "<group>"; };
 		8CEBFCAB16E7BA9600D04CA5 /* nossaq.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = nossaq.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CEBFCAE16E7BA9600D04CA5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		8CEBFCB016E7BA9600D04CA5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -167,6 +171,8 @@
 		8CEBFCEB16E7BD1600D04CA5 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				8CE8620416FA0A2A00D72E53 /* background_color.png */,
+				8CE8620216FA097600D72E53 /* cooltext963082801.png */,
 				8CEBFCC616E7BA9600D04CA5 /* MainStoryboard.storyboard */,
 				8CEBFCC916E7BA9600D04CA5 /* ViewController.h */,
 				8CEBFCCA16E7BA9600D04CA5 /* ViewController.m */,
@@ -261,6 +267,8 @@
 				8CEBFCC516E7BA9600D04CA5 /* Default-568h@2x.png in Resources */,
 				8CEBFCC816E7BA9600D04CA5 /* MainStoryboard.storyboard in Resources */,
 				8CEBFCEA16E7BCEA00D04CA5 /* HomeStoryboard.storyboard in Resources */,
+				8CE8620316FA097600D72E53 /* cooltext963082801.png in Resources */,
+				8CE8620516FA0A2A00D72E53 /* background_color.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -479,6 +487,7 @@
 				8CEBFCE516E7BA9600D04CA5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8CEBFCE616E7BA9600D04CA5 /* Build configuration list for PBXNativeTarget "nossaqTests" */ = {
 			isa = XCConfigurationList;
@@ -487,6 +496,7 @@
 				8CEBFCE816E7BA9600D04CA5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
