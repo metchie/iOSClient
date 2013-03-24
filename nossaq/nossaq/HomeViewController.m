@@ -26,7 +26,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+	TKCalendarMonthView *calendar1=[[TKCalendarMonthView alloc] init];
+    calendar1.delegate = self;
+    calendar1.dataSource = self;
+    [calendar1 selectDate:[NSDate date]];
+    [self.view addSubview:calendar1];
 }
 
 - (void)didReceiveMemoryWarning

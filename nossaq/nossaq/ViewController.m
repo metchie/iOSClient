@@ -37,9 +37,10 @@
     UIStoryboard *homeStoryboard = [UIStoryboard storyboardWithName:@"HomeStoryboard" bundle:nil];
     UIViewController* homeViewController = [homeStoryboard instantiateInitialViewController];
     
-    homeViewController.modalPresentationStyle = UIModalTransitionStyleCoverVertical;
-    self.modalPresentationStyle = UIModalTransitionStyleCoverVertical;
-    [self presentModalViewController:homeViewController animated:YES ];
+    homeViewController.modalPresentationStyle = UIModalPresentationPageSheet;
+    [self presentViewController:homeViewController animated:YES completion:NULL];
+    
+    
 }
 - (IBAction)registerButton:(id)sender {
 }
