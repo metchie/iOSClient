@@ -10,5 +10,7 @@
 #import <TapkuLibrary/TapkuLibrary.h>
 
 @interface HomeViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UIView *calenderView;
+- (IBAction)signoutButton:(id)sender;
 
 @end

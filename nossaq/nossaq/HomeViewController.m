@@ -27,10 +27,11 @@
 {
     [super viewDidLoad];
 	TKCalendarMonthView *calendar1=[[TKCalendarMonthView alloc] init];
-    calendar1.delegate = self;
-    calendar1.dataSource = self;
+    
     [calendar1 selectDate:[NSDate date]];
-    [self.view addSubview:calendar1];
+    [self.calenderView addSubview:calendar1];
+    UITableView* tableView = [[UITableView alloc] initWithFrame:self.view.bounds];
+    [self.calenderView insertSubview:tableView belowSubview:calendar1];
 }
 
 - (void)didReceiveMemoryWarning
@@ -39,4 +40,11 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)signoutButton:(id)sender {
+    UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
+    UIViewController* mainViewController = [mainStoryboard instantiateInitialViewController];
+    
+    mainViewController.modalPresentationStyle = UIModalPresentationPageSheet;
+    [self presentViewController:mainViewController animated:YES completion:NULL];
+}
 @end
