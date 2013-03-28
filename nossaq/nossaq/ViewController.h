@@ -8,9 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController <UITextFieldDelegate>
 - (IBAction)registerButton:(id)sender;
 - (IBAction)loginButton:(id)sender;
+-(BOOL)login:(NSString *)userName password:(NSString *)password;
 @property (weak, nonatomic) IBOutlet UITextField *usernameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
 
