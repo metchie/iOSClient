@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		320A43C41704CD2200C2766D /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 320A43C31704CD2200C2766D /* MainStoryboard.storyboard */; };
+		8C11B5701704BA440037E824 /* AddEventController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C11B56F1704BA440037E824 /* AddEventController.m */; };
+		8C29865E16FF1C5B0080855D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C29865D16FF1C5B0080855D /* QuartzCore.framework */; };
+		8C29866016FF1C600080855D /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C29865F16FF1C600080855D /* MapKit.framework */; };
+		8C6179691702425E00CA135A /* TapkuLibrary.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 8C6179651702425E00CA135A /* TapkuLibrary.bundle */; };
+		8C61797A1702467500CA135A /* libTapkuLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C6179751702426500CA135A /* libTapkuLibrary.a */; };
+		8CE8620316FA097600D72E53 /* cooltext963082801.png in Resources */ = {isa = PBXBuildFile; fileRef = 8CE8620216FA097600D72E53 /* cooltext963082801.png */; };
+		8CE8620516FA0A2A00D72E53 /* background_color.png in Resources */ = {isa = PBXBuildFile; fileRef = 8CE8620416FA0A2A00D72E53 /* background_color.png */; };
 		8CEBFCAF16E7BA9600D04CA5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CEBFCAE16E7BA9600D04CA5 /* UIKit.framework */; };
 		8CEBFCB116E7BA9600D04CA5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CEBFCB016E7BA9600D04CA5 /* Foundation.framework */; };
 		8CEBFCB316E7BA9600D04CA5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CEBFCB216E7BA9600D04CA5 /* CoreGraphics.framework */; };
@@ -16,7 +24,6 @@
 		8CEBFCC116E7BA9600D04CA5 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 8CEBFCC016E7BA9600D04CA5 /* Default.png */; };
 		8CEBFCC316E7BA9600D04CA5 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8CEBFCC216E7BA9600D04CA5 /* Default@2x.png */; };
 		8CEBFCC516E7BA9600D04CA5 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8CEBFCC416E7BA9600D04CA5 /* Default-568h@2x.png */; };
-		8CEBFCC816E7BA9600D04CA5 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CEBFCC616E7BA9600D04CA5 /* MainStoryboard.storyboard */; };
 		8CEBFCCB16E7BA9600D04CA5 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CEBFCCA16E7BA9600D04CA5 /* ViewController.m */; };
 		8CEBFCD316E7BA9600D04CA5 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CEBFCD216E7BA9600D04CA5 /* SenTestingKit.framework */; };
 		8CEBFCD416E7BA9600D04CA5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CEBFCAE16E7BA9600D04CA5 /* UIKit.framework */; };
@@ -28,6 +35,27 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		8C6179741702426500CA135A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8C6179661702425E00CA135A /* TapkuLibrary.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D2AAC07E0554694100DB518D;
+			remoteInfo = TapkuLibrary;
+		};
+		8C6179761702426500CA135A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8C6179661702425E00CA135A /* TapkuLibrary.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 3B45DDF1134C736600D24C1A;
+			remoteInfo = LogicTests;
+		};
+		8C6179781702465600CA135A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8C6179661702425E00CA135A /* TapkuLibrary.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = D2AAC07D0554694100DB518D;
+			remoteInfo = TapkuLibrary;
+		};
 		8CEBFCD616E7BA9600D04CA5 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 8CEBFCA316E7BA9600D04CA5 /* Project object */;
@@ -38,6 +66,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		320A43C31704CD2200C2766D /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
+		8C11B56E1704BA440037E824 /* AddEventController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddEventController.h; sourceTree = "<group>"; };
+		8C11B56F1704BA440037E824 /* AddEventController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddEventController.m; sourceTree = "<group>"; };
+		8C29865D16FF1C5B0080855D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		8C29865F16FF1C600080855D /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		8C6179651702425E00CA135A /* TapkuLibrary.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = TapkuLibrary.bundle; path = ../tapkulibrary/src/TapkuLibrary.bundle; sourceTree = "<group>"; };
+		8C6179661702425E00CA135A /* TapkuLibrary.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = TapkuLibrary.xcodeproj; path = ../tapkulibrary/src/TapkuLibrary.xcodeproj; sourceTree = "<group>"; };
+		8CE8620216FA097600D72E53 /* cooltext963082801.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cooltext963082801.png; sourceTree = "<group>"; };
+		8CE8620416FA0A2A00D72E53 /* background_color.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background_color.png; sourceTree = "<group>"; };
 		8CEBFCAB16E7BA9600D04CA5 /* nossaq.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = nossaq.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CEBFCAE16E7BA9600D04CA5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		8CEBFCB016E7BA9600D04CA5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -51,7 +88,6 @@
 		8CEBFCC016E7BA9600D04CA5 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		8CEBFCC216E7BA9600D04CA5 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		8CEBFCC416E7BA9600D04CA5 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		8CEBFCC716E7BA9600D04CA5 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		8CEBFCC916E7BA9600D04CA5 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		8CEBFCCA16E7BA9600D04CA5 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		8CEBFCD116E7BA9600D04CA5 /* nossaqTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = nossaqTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -70,6 +106,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C61797A1702467500CA135A /* libTapkuLibrary.a in Frameworks */,
+				8C29866016FF1C600080855D /* MapKit.framework in Frameworks */,
+				8C29865E16FF1C5B0080855D /* QuartzCore.framework in Frameworks */,
 				8CEBFCAF16E7BA9600D04CA5 /* UIKit.framework in Frameworks */,
 				8CEBFCB116E7BA9600D04CA5 /* Foundation.framework in Frameworks */,
 				8CEBFCB316E7BA9600D04CA5 /* CoreGraphics.framework in Frameworks */,
@@ -89,6 +128,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8C6179701702426500CA135A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8C6179751702426500CA135A /* libTapkuLibrary.a */,
+				8C6179771702426500CA135A /* LogicTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		8CEBFCA216E7BA9600D04CA5 = {
 			isa = PBXGroup;
 			children = (
@@ -111,6 +159,8 @@
 		8CEBFCAD16E7BA9600D04CA5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8C29865F16FF1C600080855D /* MapKit.framework */,
+				8C29865D16FF1C5B0080855D /* QuartzCore.framework */,
 				8CEBFCAE16E7BA9600D04CA5 /* UIKit.framework */,
 				8CEBFCB016E7BA9600D04CA5 /* Foundation.framework */,
 				8CEBFCB216E7BA9600D04CA5 /* CoreGraphics.framework */,
@@ -124,8 +174,8 @@
 			children = (
 				8CEBFCEB16E7BD1600D04CA5 /* Login */,
 				8CEBFCBD16E7BA9600D04CA5 /* AppDelegate.h */,
-				8CEBFCEC16E7BD3700D04CA5 /* Home */,
 				8CEBFCBE16E7BA9600D04CA5 /* AppDelegate.m */,
+				8CEBFCEC16E7BD3700D04CA5 /* Home */,
 				8CEBFCB516E7BA9600D04CA5 /* Supporting Files */,
 			);
 			path = nossaq;
@@ -134,6 +184,8 @@
 		8CEBFCB516E7BA9600D04CA5 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				8C6179651702425E00CA135A /* TapkuLibrary.bundle */,
+				8C6179661702425E00CA135A /* TapkuLibrary.xcodeproj */,
 				8CEBFCB616E7BA9600D04CA5 /* nossaq-Info.plist */,
 				8CEBFCB716E7BA9600D04CA5 /* InfoPlist.strings */,
 				8CEBFCBA16E7BA9600D04CA5 /* main.m */,
@@ -167,7 +219,9 @@
 		8CEBFCEB16E7BD1600D04CA5 /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				8CEBFCC616E7BA9600D04CA5 /* MainStoryboard.storyboard */,
+				8CE8620416FA0A2A00D72E53 /* background_color.png */,
+				320A43C31704CD2200C2766D /* MainStoryboard.storyboard */,
+				8CE8620216FA097600D72E53 /* cooltext963082801.png */,
 				8CEBFCC916E7BA9600D04CA5 /* ViewController.h */,
 				8CEBFCCA16E7BA9600D04CA5 /* ViewController.m */,
 			);
@@ -180,6 +234,8 @@
 				8CEBFCE916E7BCEA00D04CA5 /* HomeStoryboard.storyboard */,
 				8CEBFCED16E7BDC400D04CA5 /* HomeViewController.h */,
 				8CEBFCEE16E7BDC400D04CA5 /* HomeViewController.m */,
+				8C11B56E1704BA440037E824 /* AddEventController.h */,
+				8C11B56F1704BA440037E824 /* AddEventController.m */,
 			);
 			name = Home;
 			sourceTree = "<group>";
@@ -198,6 +254,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				8C6179791702465600CA135A /* PBXTargetDependency */,
 			);
 			name = nossaq;
 			productName = nossaq;
@@ -242,6 +299,12 @@
 			mainGroup = 8CEBFCA216E7BA9600D04CA5;
 			productRefGroup = 8CEBFCAC16E7BA9600D04CA5 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 8C6179701702426500CA135A /* Products */;
+					ProjectRef = 8C6179661702425E00CA135A /* TapkuLibrary.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				8CEBFCAA16E7BA9600D04CA5 /* nossaq */,
@@ -249,6 +312,23 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		8C6179751702426500CA135A /* libTapkuLibrary.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libTapkuLibrary.a;
+			remoteRef = 8C6179741702426500CA135A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		8C6179771702426500CA135A /* LogicTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = LogicTests.octest;
+			remoteRef = 8C6179761702426500CA135A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		8CEBFCA916E7BA9600D04CA5 /* Resources */ = {
@@ -259,8 +339,11 @@
 				8CEBFCC116E7BA9600D04CA5 /* Default.png in Resources */,
 				8CEBFCC316E7BA9600D04CA5 /* Default@2x.png in Resources */,
 				8CEBFCC516E7BA9600D04CA5 /* Default-568h@2x.png in Resources */,
-				8CEBFCC816E7BA9600D04CA5 /* MainStoryboard.storyboard in Resources */,
 				8CEBFCEA16E7BCEA00D04CA5 /* HomeStoryboard.storyboard in Resources */,
+				8CE8620316FA097600D72E53 /* cooltext963082801.png in Resources */,
+				8CE8620516FA0A2A00D72E53 /* background_color.png in Resources */,
+				8C6179691702425E00CA135A /* TapkuLibrary.bundle in Resources */,
+				320A43C41704CD2200C2766D /* MainStoryboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -299,6 +382,7 @@
 				8CEBFCBF16E7BA9600D04CA5 /* AppDelegate.m in Sources */,
 				8CEBFCCB16E7BA9600D04CA5 /* ViewController.m in Sources */,
 				8CEBFCEF16E7BDC400D04CA5 /* HomeViewController.m in Sources */,
+				8C11B5701704BA440037E824 /* AddEventController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -313,6 +397,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		8C6179791702465600CA135A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = TapkuLibrary;
+			targetProxy = 8C6179781702465600CA135A /* PBXContainerItemProxy */;
+		};
 		8CEBFCD716E7BA9600D04CA5 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 8CEBFCAA16E7BA9600D04CA5 /* nossaq */;
@@ -327,14 +416,6 @@
 				8CEBFCB816E7BA9600D04CA5 /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		8CEBFCC616E7BA9600D04CA5 /* MainStoryboard.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				8CEBFCC716E7BA9600D04CA5 /* en */,
-			);
-			name = MainStoryboard.storyboard;
 			sourceTree = "<group>";
 		};
 		8CEBFCDB16E7BA9600D04CA5 /* InfoPlist.strings */ = {
@@ -409,7 +490,12 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "nossaq/nossaq-Prefix.pch";
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/tapkulibrary/src";
 				INFOPLIST_FILE = "nossaq/nossaq-Info.plist";
+				OTHER_LDFLAGS = (
+					"-all_load",
+					"-ObjC",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -420,7 +506,12 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "nossaq/nossaq-Prefix.pch";
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/tapkulibrary/src";
 				INFOPLIST_FILE = "nossaq/nossaq-Info.plist";
+				OTHER_LDFLAGS = (
+					"-all_load",
+					"-ObjC",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -479,6 +570,7 @@
 				8CEBFCE516E7BA9600D04CA5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8CEBFCE616E7BA9600D04CA5 /* Build configuration list for PBXNativeTarget "nossaqTests" */ = {
 			isa = XCConfigurationList;
@@ -487,6 +579,7 @@
 				8CEBFCE816E7BA9600D04CA5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

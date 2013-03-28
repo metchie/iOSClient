@@ -1,27 +1,125 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12C3006" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="ay1-ZN-TuK">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12D78" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="50E-dg-djR">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
     <scenes>
-        <!--Home View Controller-->
-        <scene sceneID="w7q-RY-FTs">
+        <!--Home View Controller - Calendar-->
+        <scene sceneID="7cn-NM-YXX">
             <objects>
-                <viewController id="ay1-ZN-TuK" customClass="HomeViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Kx3-HV-Q31">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                <viewController id="acm-Ne-HhC" customClass="HomeViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nJu-27-0Ue">
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oh2-cd-C5a"/>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nYK-jq-3cC">
+                                <items>
+                                    <barButtonItem title="Today" id="JSG-et-upy">
+                                        <connections>
+                                            <action selector="todayButton:" destination="acm-Ne-HhC" id="I6B-Gt-QdQ"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" id="mNK-U1-7mg">
+                                        <segmentedControl key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="1" id="be6-9H-NIk">
+                                            <rect key="frame" x="72" y="8" width="239" height="31"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <segments>
+                                                <segment title="List"/>
+                                                <segment title="Month"/>
+                                                <segment title="Day"/>
+                                            </segments>
+                                            <connections>
+                                                <action selector="calendarViewSelectionButton:" destination="acm-Ne-HhC" eventType="valueChanged" id="tOB-zY-qal"/>
+                                            </connections>
+                                        </segmentedControl>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="oh2-cd-C5a" firstAttribute="top" secondItem="nJu-27-0Ue" secondAttribute="top" type="default" id="1um-9j-fFE"/>
+                            <constraint firstItem="nYK-jq-3cC" firstAttribute="trailing" secondItem="nJu-27-0Ue" secondAttribute="trailing" type="default" id="DXg-9b-dBP"/>
+                            <constraint firstItem="nYK-jq-3cC" firstAttribute="leading" secondItem="nJu-27-0Ue" secondAttribute="leading" type="default" id="RIN-Jk-PGz"/>
+                            <constraint firstItem="oh2-cd-C5a" firstAttribute="leading" secondItem="nJu-27-0Ue" secondAttribute="leading" type="default" id="SI1-ev-J6E"/>
+                            <constraint firstItem="nYK-jq-3cC" firstAttribute="bottom" secondItem="nJu-27-0Ue" secondAttribute="bottom" type="default" id="Tqh-Pm-2YH"/>
+                            <constraint firstItem="nYK-jq-3cC" firstAttribute="top" secondItem="oh2-cd-C5a" secondAttribute="bottom" type="default" id="VFp-b7-Svg"/>
+                            <constraint firstItem="oh2-cd-C5a" firstAttribute="trailing" secondItem="nJu-27-0Ue" secondAttribute="trailing" type="default" id="d57-gc-Fsa"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Calendar" id="nxu-v7-OdE">
+                        <barButtonItem key="leftBarButtonItem" title="Sign out" id="LV9-dg-g0w">
+                            <connections>
+                                <action selector="signoutButton:" destination="acm-Ne-HhC" id="xG2-C7-ZCK"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="k0v-wh-Jin">
+                            <connections>
+                                <segue destination="hcb-HC-uk1" kind="push" id="euD-ED-nQo"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="calenderView" destination="oh2-cd-C5a" id="OAB-DI-uZW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JCp-i0-2EX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-125" y="29"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="8Xs-4b-aRc">
+            <objects>
+                <navigationController definesPresentationContext="YES" id="50E-dg-djR" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="Fw4-c0-cUw"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="STU-66-C1X">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="acm-Ne-HhC" kind="relationship" relationship="rootViewController" id="nIg-Hl-Zwe"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CWg-mB-Czy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-579" y="29"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="ls5-5L-cpG">
+            <objects>
+                <viewController id="hcb-HC-uk1" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="yTr-td-lZA">
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="8ge-32-lk5">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="5wd-zs-IuK"/>
+                        <barButtonItem key="rightBarButtonItem" title="Done" id="2z5-UN-aYd"/>
+                    </navigationItem>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="7Ec-nq-OjA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dHV-hO-oeE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="79" y="16"/>
+            <point key="canvasLocation" x="298" y="29"/>
         </scene>
     </scenes>
+    <classes>
+        <class className="HomeViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HomeViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="calendarViewSelectionButton:"/>
+                <relationship kind="action" name="signoutButton:"/>
+                <relationship kind="action" name="todayButton:"/>
+                <relationship kind="outlet" name="calenderView" candidateClass="UIView"/>
+            </relationships>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination" type="retina4"/>
+        <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
 </document>

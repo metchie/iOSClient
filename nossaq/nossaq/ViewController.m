@@ -67,7 +67,9 @@
         [self presentViewController:homeViewController animated:YES completion:NULL];
     }
     
-
+    homeViewController.modalPresentationStyle = UIModalPresentationPageSheet;
+    [self presentViewController:homeViewController animated:YES completion:NULL];
+    
 }
 - (IBAction)registerButton:(id)sender {
 }
@@ -94,5 +96,6 @@
         return false;
     }
 }
+
 
 @end
