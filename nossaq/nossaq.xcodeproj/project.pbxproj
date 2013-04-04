@@ -7,12 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		320A43C41704CD2200C2766D /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 320A43C31704CD2200C2766D /* MainStoryboard.storyboard */; };
+		320A43C41704CD2200C2766D /* LoginStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 320A43C31704CD2200C2766D /* LoginStoryboard.storyboard */; };
 		8C11B5701704BA440037E824 /* AddEventController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C11B56F1704BA440037E824 /* AddEventController.m */; };
 		8C29865E16FF1C5B0080855D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C29865D16FF1C5B0080855D /* QuartzCore.framework */; };
 		8C29866016FF1C600080855D /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C29865F16FF1C600080855D /* MapKit.framework */; };
+		8C58C17C170A1F2D00D78D99 /* DatabaseConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C58C17B170A1F2D00D78D99 /* DatabaseConnection.m */; };
 		8C6179691702425E00CA135A /* TapkuLibrary.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 8C6179651702425E00CA135A /* TapkuLibrary.bundle */; };
 		8C61797A1702467500CA135A /* libTapkuLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C6179751702426500CA135A /* libTapkuLibrary.a */; };
+		8C77CC4F1706CEBF0034411C /* RegisterStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C77CC4E1706CEBF0034411C /* RegisterStoryboard.storyboard */; };
+		8C77CC521706DC210034411C /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C77CC511706DC210034411C /* libsqlite3.dylib */; };
+		8C77CC551706DD2C0034411C /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C77CC541706DD2B0034411C /* RegisterViewController.m */; };
+		8C77CC581706E29D0034411C /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C77CC571706E29D0034411C /* CoreData.framework */; };
+		8C77CC5B1706E48A0034411C /* Nossaq.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8C77CC591706E48A0034411C /* Nossaq.xcdatamodeld */; };
+		8C77CC5E1706F3B40034411C /* ServerConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C77CC5D1706F3B40034411C /* ServerConnection.m */; };
 		8CE8620316FA097600D72E53 /* cooltext963082801.png in Resources */ = {isa = PBXBuildFile; fileRef = 8CE8620216FA097600D72E53 /* cooltext963082801.png */; };
 		8CE8620516FA0A2A00D72E53 /* background_color.png in Resources */ = {isa = PBXBuildFile; fileRef = 8CE8620416FA0A2A00D72E53 /* background_color.png */; };
 		8CEBFCAF16E7BA9600D04CA5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CEBFCAE16E7BA9600D04CA5 /* UIKit.framework */; };
@@ -24,7 +31,7 @@
 		8CEBFCC116E7BA9600D04CA5 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 8CEBFCC016E7BA9600D04CA5 /* Default.png */; };
 		8CEBFCC316E7BA9600D04CA5 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8CEBFCC216E7BA9600D04CA5 /* Default@2x.png */; };
 		8CEBFCC516E7BA9600D04CA5 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8CEBFCC416E7BA9600D04CA5 /* Default-568h@2x.png */; };
-		8CEBFCCB16E7BA9600D04CA5 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CEBFCCA16E7BA9600D04CA5 /* ViewController.m */; };
+		8CEBFCCB16E7BA9600D04CA5 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CEBFCCA16E7BA9600D04CA5 /* LoginViewController.m */; };
 		8CEBFCD316E7BA9600D04CA5 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CEBFCD216E7BA9600D04CA5 /* SenTestingKit.framework */; };
 		8CEBFCD416E7BA9600D04CA5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CEBFCAE16E7BA9600D04CA5 /* UIKit.framework */; };
 		8CEBFCD516E7BA9600D04CA5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CEBFCB016E7BA9600D04CA5 /* Foundation.framework */; };
@@ -66,13 +73,23 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		320A43C31704CD2200C2766D /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
+		320A43C31704CD2200C2766D /* LoginStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LoginStoryboard.storyboard; sourceTree = "<group>"; };
 		8C11B56E1704BA440037E824 /* AddEventController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddEventController.h; sourceTree = "<group>"; };
 		8C11B56F1704BA440037E824 /* AddEventController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddEventController.m; sourceTree = "<group>"; };
 		8C29865D16FF1C5B0080855D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		8C29865F16FF1C600080855D /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		8C58C17A170A1F2D00D78D99 /* DatabaseConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DatabaseConnection.h; sourceTree = "<group>"; };
+		8C58C17B170A1F2D00D78D99 /* DatabaseConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DatabaseConnection.m; sourceTree = "<group>"; };
 		8C6179651702425E00CA135A /* TapkuLibrary.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = TapkuLibrary.bundle; path = ../tapkulibrary/src/TapkuLibrary.bundle; sourceTree = "<group>"; };
 		8C6179661702425E00CA135A /* TapkuLibrary.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = TapkuLibrary.xcodeproj; path = ../tapkulibrary/src/TapkuLibrary.xcodeproj; sourceTree = "<group>"; };
+		8C77CC4E1706CEBF0034411C /* RegisterStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = RegisterStoryboard.storyboard; sourceTree = "<group>"; };
+		8C77CC511706DC210034411C /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		8C77CC531706DD2B0034411C /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
+		8C77CC541706DD2B0034411C /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
+		8C77CC571706E29D0034411C /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		8C77CC5A1706E48A0034411C /* Nossaq.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Nossaq.xcdatamodel; sourceTree = "<group>"; };
+		8C77CC5C1706F3B40034411C /* ServerConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServerConnection.h; sourceTree = "<group>"; };
+		8C77CC5D1706F3B40034411C /* ServerConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServerConnection.m; sourceTree = "<group>"; };
 		8CE8620216FA097600D72E53 /* cooltext963082801.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cooltext963082801.png; sourceTree = "<group>"; };
 		8CE8620416FA0A2A00D72E53 /* background_color.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background_color.png; sourceTree = "<group>"; };
 		8CEBFCAB16E7BA9600D04CA5 /* nossaq.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = nossaq.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -88,8 +105,8 @@
 		8CEBFCC016E7BA9600D04CA5 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		8CEBFCC216E7BA9600D04CA5 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		8CEBFCC416E7BA9600D04CA5 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		8CEBFCC916E7BA9600D04CA5 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		8CEBFCCA16E7BA9600D04CA5 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		8CEBFCC916E7BA9600D04CA5 /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		8CEBFCCA16E7BA9600D04CA5 /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		8CEBFCD116E7BA9600D04CA5 /* nossaqTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = nossaqTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CEBFCD216E7BA9600D04CA5 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		8CEBFCDA16E7BA9600D04CA5 /* nossaqTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "nossaqTests-Info.plist"; sourceTree = "<group>"; };
@@ -106,6 +123,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C77CC581706E29D0034411C /* CoreData.framework in Frameworks */,
+				8C77CC521706DC210034411C /* libsqlite3.dylib in Frameworks */,
 				8C61797A1702467500CA135A /* libTapkuLibrary.a in Frameworks */,
 				8C29866016FF1C600080855D /* MapKit.framework in Frameworks */,
 				8C29865E16FF1C5B0080855D /* QuartzCore.framework in Frameworks */,
@@ -137,9 +156,22 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		8C77CC561706DF390034411C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				8C77CC591706E48A0034411C /* Nossaq.xcdatamodeld */,
+				8C77CC5C1706F3B40034411C /* ServerConnection.h */,
+				8C77CC5D1706F3B40034411C /* ServerConnection.m */,
+				8C58C17A170A1F2D00D78D99 /* DatabaseConnection.h */,
+				8C58C17B170A1F2D00D78D99 /* DatabaseConnection.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
 		8CEBFCA216E7BA9600D04CA5 = {
 			isa = PBXGroup;
 			children = (
+				8C77CC571706E29D0034411C /* CoreData.framework */,
 				8CEBFCB416E7BA9600D04CA5 /* nossaq */,
 				8CEBFCD816E7BA9600D04CA5 /* nossaqTests */,
 				8CEBFCAD16E7BA9600D04CA5 /* Frameworks */,
@@ -172,9 +204,10 @@
 		8CEBFCB416E7BA9600D04CA5 /* nossaq */ = {
 			isa = PBXGroup;
 			children = (
-				8CEBFCEB16E7BD1600D04CA5 /* Login */,
 				8CEBFCBD16E7BA9600D04CA5 /* AppDelegate.h */,
 				8CEBFCBE16E7BA9600D04CA5 /* AppDelegate.m */,
+				8C77CC561706DF390034411C /* Models */,
+				8CEBFCEB16E7BD1600D04CA5 /* Login */,
 				8CEBFCEC16E7BD3700D04CA5 /* Home */,
 				8CEBFCB516E7BA9600D04CA5 /* Supporting Files */,
 			);
@@ -184,6 +217,7 @@
 		8CEBFCB516E7BA9600D04CA5 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				8C77CC511706DC210034411C /* libsqlite3.dylib */,
 				8C6179651702425E00CA135A /* TapkuLibrary.bundle */,
 				8C6179661702425E00CA135A /* TapkuLibrary.xcodeproj */,
 				8CEBFCB616E7BA9600D04CA5 /* nossaq-Info.plist */,
@@ -220,10 +254,13 @@
 			isa = PBXGroup;
 			children = (
 				8CE8620416FA0A2A00D72E53 /* background_color.png */,
-				320A43C31704CD2200C2766D /* MainStoryboard.storyboard */,
+				320A43C31704CD2200C2766D /* LoginStoryboard.storyboard */,
 				8CE8620216FA097600D72E53 /* cooltext963082801.png */,
-				8CEBFCC916E7BA9600D04CA5 /* ViewController.h */,
-				8CEBFCCA16E7BA9600D04CA5 /* ViewController.m */,
+				8CEBFCC916E7BA9600D04CA5 /* LoginViewController.h */,
+				8CEBFCCA16E7BA9600D04CA5 /* LoginViewController.m */,
+				8C77CC4E1706CEBF0034411C /* RegisterStoryboard.storyboard */,
+				8C77CC531706DD2B0034411C /* RegisterViewController.h */,
+				8C77CC541706DD2B0034411C /* RegisterViewController.m */,
 			);
 			name = Login;
 			sourceTree = "<group>";
@@ -343,7 +380,8 @@
 				8CE8620316FA097600D72E53 /* cooltext963082801.png in Resources */,
 				8CE8620516FA0A2A00D72E53 /* background_color.png in Resources */,
 				8C6179691702425E00CA135A /* TapkuLibrary.bundle in Resources */,
-				320A43C41704CD2200C2766D /* MainStoryboard.storyboard in Resources */,
+				320A43C41704CD2200C2766D /* LoginStoryboard.storyboard in Resources */,
+				8C77CC4F1706CEBF0034411C /* RegisterStoryboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -380,9 +418,13 @@
 			files = (
 				8CEBFCBB16E7BA9600D04CA5 /* main.m in Sources */,
 				8CEBFCBF16E7BA9600D04CA5 /* AppDelegate.m in Sources */,
-				8CEBFCCB16E7BA9600D04CA5 /* ViewController.m in Sources */,
+				8CEBFCCB16E7BA9600D04CA5 /* LoginViewController.m in Sources */,
 				8CEBFCEF16E7BDC400D04CA5 /* HomeViewController.m in Sources */,
 				8C11B5701704BA440037E824 /* AddEventController.m in Sources */,
+				8C77CC551706DD2C0034411C /* RegisterViewController.m in Sources */,
+				8C77CC5B1706E48A0034411C /* Nossaq.xcdatamodeld in Sources */,
+				8C77CC5E1706F3B40034411C /* ServerConnection.m in Sources */,
+				8C58C17C170A1F2D00D78D99 /* DatabaseConnection.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -582,6 +624,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		8C77CC591706E48A0034411C /* Nossaq.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				8C77CC5A1706E48A0034411C /* Nossaq.xcdatamodel */,
+			);
+			currentVersion = 8C77CC5A1706E48A0034411C /* Nossaq.xcdatamodel */;
+			path = Nossaq.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 8CEBFCA316E7BA9600D04CA5 /* Project object */;
 }

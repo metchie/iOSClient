@@ -54,8 +54,8 @@
 }
 
 - (IBAction)signoutButton:(id)sender {
-    UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
-    UIViewController* mainViewController = [mainStoryboard instantiateInitialViewController];
+    UIStoryboard *loginStoryboard = [UIStoryboard storyboardWithName:@"LoginStoryboard" bundle:nil];
+    UIViewController* mainViewController = [loginStoryboard instantiateInitialViewController];
     
     mainViewController.modalPresentationStyle = UIModalPresentationPageSheet;
     [self presentViewController:mainViewController animated:YES completion:NULL];

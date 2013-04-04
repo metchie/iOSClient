@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ServerConnection.h"
 
-@interface ViewController : UIViewController <UITextFieldDelegate>
+@interface LoginViewController : UIViewController <UITextFieldDelegate>
 - (IBAction)registerButton:(id)sender;
 - (IBAction)loginButton:(id)sender;
 -(BOOL)login:(NSString *)userName password:(NSString *)password;

@@ -1,8 +1,8 @@
 //
 //  AppDelegate.h
-//  nossaq
+//  d
 //
-//  Created by Aykut on 3/6/13.
+//  Created by Aykut on 3/30/13.
 //  Copyright (c) 2013 nossaq. All rights reserved.
 //
 
@@ -18,6 +18,5 @@
 
 - (void)saveContext;
 - (NSURL *)applicationDocumentsDirectory;
-
 
 @end
