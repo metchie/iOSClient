@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		320A43C41704CD2200C2766D /* LoginStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 320A43C31704CD2200C2766D /* LoginStoryboard.storyboard */; };
-		8C11B5701704BA440037E824 /* AddEventController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C11B56F1704BA440037E824 /* AddEventController.m */; };
 		8C29865E16FF1C5B0080855D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C29865D16FF1C5B0080855D /* QuartzCore.framework */; };
 		8C29866016FF1C600080855D /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C29865F16FF1C600080855D /* MapKit.framework */; };
 		8C58C17C170A1F2D00D78D99 /* DatabaseConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C58C17B170A1F2D00D78D99 /* DatabaseConnection.m */; };
@@ -20,6 +19,10 @@
 		8C77CC581706E29D0034411C /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C77CC571706E29D0034411C /* CoreData.framework */; };
 		8C77CC5B1706E48A0034411C /* Nossaq.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8C77CC591706E48A0034411C /* Nossaq.xcdatamodeld */; };
 		8C77CC5E1706F3B40034411C /* ServerConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C77CC5D1706F3B40034411C /* ServerConnection.m */; };
+		8CCFB4081719638C008A247F /* Properties.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8CCFB4071719638C008A247F /* Properties.plist */; };
+		8CCFB415171ADB52008A247F /* AddManualEventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CCFB414171ADB52008A247F /* AddManualEventViewController.m */; };
+		8CCFB418171AFBDE008A247F /* AddAutoEventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CCFB417171AFBDE008A247F /* AddAutoEventViewController.m */; };
+		8CCFB41B171B0D33008A247F /* DateSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CCFB41A171B0D33008A247F /* DateSelectionViewController.m */; };
 		8CE8620316FA097600D72E53 /* cooltext963082801.png in Resources */ = {isa = PBXBuildFile; fileRef = 8CE8620216FA097600D72E53 /* cooltext963082801.png */; };
 		8CE8620516FA0A2A00D72E53 /* background_color.png in Resources */ = {isa = PBXBuildFile; fileRef = 8CE8620416FA0A2A00D72E53 /* background_color.png */; };
 		8CEBFCAF16E7BA9600D04CA5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CEBFCAE16E7BA9600D04CA5 /* UIKit.framework */; };
@@ -74,8 +77,6 @@
 
 /* Begin PBXFileReference section */
 		320A43C31704CD2200C2766D /* LoginStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LoginStoryboard.storyboard; sourceTree = "<group>"; };
-		8C11B56E1704BA440037E824 /* AddEventController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddEventController.h; sourceTree = "<group>"; };
-		8C11B56F1704BA440037E824 /* AddEventController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddEventController.m; sourceTree = "<group>"; };
 		8C29865D16FF1C5B0080855D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		8C29865F16FF1C600080855D /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		8C58C17A170A1F2D00D78D99 /* DatabaseConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DatabaseConnection.h; sourceTree = "<group>"; };
@@ -90,6 +91,13 @@
 		8C77CC5A1706E48A0034411C /* Nossaq.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Nossaq.xcdatamodel; sourceTree = "<group>"; };
 		8C77CC5C1706F3B40034411C /* ServerConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServerConnection.h; sourceTree = "<group>"; };
 		8C77CC5D1706F3B40034411C /* ServerConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServerConnection.m; sourceTree = "<group>"; };
+		8CCFB4071719638C008A247F /* Properties.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Properties.plist; sourceTree = "<group>"; };
+		8CCFB413171ADB52008A247F /* AddManualEventViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddManualEventViewController.h; sourceTree = "<group>"; };
+		8CCFB414171ADB52008A247F /* AddManualEventViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddManualEventViewController.m; sourceTree = "<group>"; };
+		8CCFB416171AFBDE008A247F /* AddAutoEventViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddAutoEventViewController.h; sourceTree = "<group>"; };
+		8CCFB417171AFBDE008A247F /* AddAutoEventViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddAutoEventViewController.m; sourceTree = "<group>"; };
+		8CCFB419171B0D33008A247F /* DateSelectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateSelectionViewController.h; sourceTree = "<group>"; };
+		8CCFB41A171B0D33008A247F /* DateSelectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateSelectionViewController.m; sourceTree = "<group>"; };
 		8CE8620216FA097600D72E53 /* cooltext963082801.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cooltext963082801.png; sourceTree = "<group>"; };
 		8CE8620416FA0A2A00D72E53 /* background_color.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background_color.png; sourceTree = "<group>"; };
 		8CEBFCAB16E7BA9600D04CA5 /* nossaq.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = nossaq.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -227,6 +235,7 @@
 				8CEBFCC016E7BA9600D04CA5 /* Default.png */,
 				8CEBFCC216E7BA9600D04CA5 /* Default@2x.png */,
 				8CEBFCC416E7BA9600D04CA5 /* Default-568h@2x.png */,
+				8CCFB4071719638C008A247F /* Properties.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -271,8 +280,12 @@
 				8CEBFCE916E7BCEA00D04CA5 /* HomeStoryboard.storyboard */,
 				8CEBFCED16E7BDC400D04CA5 /* HomeViewController.h */,
 				8CEBFCEE16E7BDC400D04CA5 /* HomeViewController.m */,
-				8C11B56E1704BA440037E824 /* AddEventController.h */,
-				8C11B56F1704BA440037E824 /* AddEventController.m */,
+				8CCFB413171ADB52008A247F /* AddManualEventViewController.h */,
+				8CCFB414171ADB52008A247F /* AddManualEventViewController.m */,
+				8CCFB416171AFBDE008A247F /* AddAutoEventViewController.h */,
+				8CCFB417171AFBDE008A247F /* AddAutoEventViewController.m */,
+				8CCFB419171B0D33008A247F /* DateSelectionViewController.h */,
+				8CCFB41A171B0D33008A247F /* DateSelectionViewController.m */,
 			);
 			name = Home;
 			sourceTree = "<group>";
@@ -382,6 +395,7 @@
 				8C6179691702425E00CA135A /* TapkuLibrary.bundle in Resources */,
 				320A43C41704CD2200C2766D /* LoginStoryboard.storyboard in Resources */,
 				8C77CC4F1706CEBF0034411C /* RegisterStoryboard.storyboard in Resources */,
+				8CCFB4081719638C008A247F /* Properties.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -420,11 +434,13 @@
 				8CEBFCBF16E7BA9600D04CA5 /* AppDelegate.m in Sources */,
 				8CEBFCCB16E7BA9600D04CA5 /* LoginViewController.m in Sources */,
 				8CEBFCEF16E7BDC400D04CA5 /* HomeViewController.m in Sources */,
-				8C11B5701704BA440037E824 /* AddEventController.m in Sources */,
 				8C77CC551706DD2C0034411C /* RegisterViewController.m in Sources */,
 				8C77CC5B1706E48A0034411C /* Nossaq.xcdatamodeld in Sources */,
 				8C77CC5E1706F3B40034411C /* ServerConnection.m in Sources */,
 				8C58C17C170A1F2D00D78D99 /* DatabaseConnection.m in Sources */,
+				8CCFB415171ADB52008A247F /* AddManualEventViewController.m in Sources */,
+				8CCFB418171AFBDE008A247F /* AddAutoEventViewController.m in Sources */,
+				8CCFB41B171B0D33008A247F /* DateSelectionViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

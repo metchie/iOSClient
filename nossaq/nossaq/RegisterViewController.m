@@ -27,8 +27,18 @@
     [super viewDidLoad];
     [[self scroll] setContentSize:CGSizeMake(320, 600)];
     
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]
+                                   initWithTarget:self
+                                   action:@selector(dismissKeyboard)];
+    
+    [self.view addGestureRecognizer:tap];
+    
 }
 
+- (void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    [self clearTextFields];
+}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -102,7 +112,7 @@
     if (dataAdded) {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Registered Succesfully"
                                                         message:@""
-                                                       delegate:nil
+                                                       delegate:self
                                               cancelButtonTitle:@"OK"
                                               otherButtonTitles:nil];
         [alert show];
@@ -110,7 +120,7 @@
     else{
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error on database"
                                                         message:@""
-                                                       delegate:nil
+                                                       delegate:self
                                               cancelButtonTitle:@"OK"
                                               otherButtonTitles:nil];
         [alert show];
@@ -127,6 +137,8 @@
 }
 
 - (IBAction)cancelButton:(id)sender {
+    [self clearTextFields]; //clear text fields after add operation
+
     UIStoryboard *registerStoryboard = [UIStoryboard storyboardWithName:@"LoginStoryboard" bundle:nil];
     UIViewController* registerStoryViewController = [registerStoryboard instantiateInitialViewController];
     registerStoryViewController.modalPresentationStyle = UIModalPresentationPageSheet;
@@ -140,6 +152,16 @@
     _emailTextField.text = @"";
     _nameTextField.text = @"";
     _surnameTextField.text = @"";
+    [self dismissKeyboard];
+}
+
+-(void)dismissKeyboard {
+    [self.usernameTextField resignFirstResponder];
+    [self.passwordTextField resignFirstResponder];
+    [self.confirmPasswordTextField resignFirstResponder];
+    [self.emailTextField resignFirstResponder];
+    [self.nameTextField resignFirstResponder];
+    [self.surnameTextField resignFirstResponder];
 }
 
 @end

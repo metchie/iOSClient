@@ -14,4 +14,5 @@
 
 +(DatabaseConnection*) sharedInstance;
 +(BOOL)addAccountUsername:(NSString *) accountString password:(NSString *) passwordString email:(NSString *) emailString name: (NSString *) nameString surname: (NSString *) surnameString;
++(BOOL)checkAccountUserName:(NSString *) accountString password:(NSString *) passwordString;
 @end

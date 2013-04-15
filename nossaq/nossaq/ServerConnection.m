@@ -49,12 +49,23 @@ static ServerConnection *sharedObject;
     return responseString;
 }
 
-+(NSString *) sendXMLWithPOSTConnetion{
++(NSString *) sendXMLWithPOSTConnection{
     
     NSString * xmlString = @"<user><username>semih</username><password>123456</password></user>";
-
-    NSMutableString *serverAddress = [NSMutableString stringWithString:@"http://139.179.206.143:9000/login"] ;
-    NSLog(@"FF%@FF", serverAddress);
+    NSString *plistPath = [[NSBundle mainBundle] pathForResource:@"Properties" ofType:@"plist"];
+    NSData *plistXML = [[NSFileManager defaultManager] contentsAtPath:plistPath];
+    NSString *errorDesc = nil;
+    NSPropertyListFormat format;
+    // convert static property liost into dictionary object
+    NSDictionary *propertyDictionary = (NSDictionary *)[NSPropertyListSerialization propertyListFromData:plistXML mutabilityOption:NSPropertyListMutableContainersAndLeaves format:&format errorDescription:&errorDesc];
+    if (!propertyDictionary)
+    {
+        NSLog(@"Error reading plist: %@, format: %d", errorDesc, format);
+    }
+    // assign values
+    NSString *serverAddressString = [NSString stringWithFormat:@"%@login", [propertyDictionary objectForKey:@"ServerIP"]];
+    NSMutableString *serverAddress = [NSMutableString stringWithString:serverAddressString];
+    NSLog(@"Server address: %@", serverAddress);
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:serverAddress]
                                                            cachePolicy:NSURLRequestReloadIgnoringLocalAndRemoteCacheData
                                                        timeoutInterval:10];
@@ -69,8 +80,7 @@ static ServerConnection *sharedObject;
     NSData *response = [NSURLConnection sendSynchronousRequest:request returningResponse:&urlResponse error:&requestError];
     NSString *responseString = [[NSString alloc] initWithData:response encoding:NSUTF8StringEncoding];
     
-    NSLog(@"FF%@FF", responseString);
     return responseString;
-}
+    }
 
 @end

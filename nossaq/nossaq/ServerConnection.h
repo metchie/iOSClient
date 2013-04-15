@@ -23,7 +23,7 @@
 //   - Using static methods for opertations is a nice convenience
 //   - Each method should ensure it is using the above sharedInstance
 +(NSString *) getDataWithGETConnection: (NSString*)methodName MethodName: (NSString*)methodName Paramater: (NSMutableArray*)parameter;
-+(NSString *) sendXMLWithPOSTConnetion;
++(NSString *) sendXMLWithPOSTConnection;
 
 // Instance Methods: Declare and implement as usual
 @end

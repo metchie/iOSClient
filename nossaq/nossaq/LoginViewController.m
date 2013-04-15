@@ -14,9 +14,9 @@
 
 @implementation LoginViewController
 
-- (void)viewDidLoad
+- (void)viewWillAppear:(BOOL)animated
 {
-    [super viewDidLoad];
+    [super viewWillAppear:animated];
 	UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]
                                    initWithTarget:self
                                    action:@selector(dismissKeyboard)];
@@ -41,7 +41,7 @@
     // Tell the keyboard where to go on next / go button.
     if(textField == self.usernameTextField || textField == self.passwordTextField)
     {
-        if ([self login:self.usernameTextField.text password:self.passwordTextField.text]) {
+        if ([self loginCheckUsername:self.usernameTextField.text password:self.passwordTextField.text]) {
             UIStoryboard *homeStoryboard = [UIStoryboard storyboardWithName:@"HomeStoryboard" bundle:nil];
             UIViewController* homeViewController = [homeStoryboard instantiateInitialViewController];
             
@@ -61,29 +61,11 @@
 }
 
 - (IBAction)loginButton:(id)sender {
-    //    UIStoryboard *homeStoryboard = [UIStoryboard storyboardWithName:@"HomeStoryboard" bundle:nil];
-    //    UIViewController* homeViewController = [homeStoryboard instantiateInitialViewController];
-    //
-    //    NSString * connectionURL = @"http://139.179.103.55:9000";
-    //    NSString * methodName = @"example2";
-    //
-    //    NSMutableArray *params= [[NSMutableArray alloc] init];
-    //    NSString * para1 = @"15";
-    //    NSString * para2 = @"16";
-    //    [params addObject:para1];
-    //    [params addObject:para2];
-    //
-    //    [ServerConnection getDataWithGETConnection:connectionURL MethodName:methodName Paramater:params];
-    //
-    //    if ([self login:self.usernameTextField.text password:self.passwordTextField.text]) {
-    //
-    //        homeViewController.modalPresentationStyle = UIModalPresentationPageSheet;
-    //        [self presentViewController:homeViewController animated:YES completion:NULL];
-    //    }
-    //[ServerConnection sendXMLWithPOSTConnetion];
+    
+    [ServerConnection sendXMLWithPOSTConnection];
     UIStoryboard *homeStoryboard = [UIStoryboard storyboardWithName:@"HomeStoryboard" bundle:nil];
     UIViewController* homeViewController = [homeStoryboard instantiateInitialViewController];
-    if ([self login:self.usernameTextField.text password:self.passwordTextField.text]) {
+    if ([self loginCheckUsername:self.usernameTextField.text password:self.passwordTextField.text]) {
                 homeViewController.modalPresentationStyle = UIModalPresentationPageSheet;
             [self presentViewController:homeViewController animated:YES completion:NULL];
     }
@@ -94,8 +76,8 @@
 }
 
 //Get username and password. Encrypt password in md5 and get authentication from the server.
--(BOOL)login:(NSString *)userName password:(NSString *)password{
-    if ([userName isEqual: @"a"] && [password isEqual: @"a"]) {
+-(BOOL)loginCheckUsername:(NSString *)userName password:(NSString *)password{
+    if ([DatabaseConnection checkAccountUserName:userName password:password]) {
         return true;
     } else{
         NSLog(@"Wrong email or password! Try again.");
