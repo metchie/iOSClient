@@ -10,7 +10,12 @@
 
 @interface AddAutoEventViewController : UITableViewController
 @property (weak, nonatomic) IBOutlet UITextField *titleTextField;
+@property (weak, nonatomic) IBOutlet UITextField *durationTextField;
 @property (weak, nonatomic) IBOutlet UITextField *notesTextField;
+@property (weak, nonatomic) IBOutlet UITextField *startsTextField;
+@property (weak, nonatomic) IBOutlet UITextField *endsTextField;
+
+
 - (IBAction)cancelButton:(id)sender;
 - (IBAction)modeSelectionButton:(id)sender;
 

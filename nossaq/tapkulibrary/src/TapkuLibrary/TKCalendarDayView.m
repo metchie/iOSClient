@@ -312,7 +312,7 @@
 	y = MIN(sv.contentSize.height - sv.bounds.size.height, y);
 	y = MAX(0,y);
 	
-	NSLog(@"SCROLL %f",y);
+	//NSLog(@"SCROLL %f",y);
 	[sv setContentOffset:CGPointMake(0, y) animated:animated];
 }
 

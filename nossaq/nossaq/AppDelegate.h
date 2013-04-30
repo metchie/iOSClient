@@ -8,7 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+@interface AppDelegate : UIResponder <UIApplicationDelegate>{
+    NSDate *currentStartDate;
+    NSDate *currentEndDate;
+}
+
+@property (strong, nonatomic) NSDate *currentStartDate;
+@property (strong, nonatomic) NSDate *currentEndDate;
 
 @property (strong, nonatomic) UIWindow *window;
 

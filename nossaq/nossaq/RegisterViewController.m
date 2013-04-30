@@ -104,10 +104,15 @@
         return;
     }
     
-    BOOL dataAdded = [DatabaseConnection addAccountUsername:_usernameTextField.text
-                                  password:_passwordTextField.text
-                                     email:_emailTextField.text name:_nameTextField.text
-                                   surname:_surnameTextField.text];
+    //Create Account Data Object
+    Account *account = [[Account alloc] init];
+    account.username = _usernameTextField.text;
+    account.password = _passwordTextField.text;
+    account.name = _nameTextField.text;
+    account.surname = _surnameTextField.text;
+    account.email = _emailTextField.text;
+    
+    BOOL dataAdded = [DatabaseConnection addAccount: account];
     
     if (dataAdded) {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Registered Succesfully"

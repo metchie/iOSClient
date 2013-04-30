@@ -8,11 +8,16 @@
 
 #import <Foundation/Foundation.h>
 #import "AppDelegate.h"
-
+#import "Account.h"
+#import "Calendar.h"
+#import "Event.h"
 @interface DatabaseConnection : NSObject{
 }
 
 +(DatabaseConnection*) sharedInstance;
-+(BOOL)addAccountUsername:(NSString *) accountString password:(NSString *) passwordString email:(NSString *) emailString name: (NSString *) nameString surname: (NSString *) surnameString;
++(BOOL)addAccount: (Account *)account;
 +(BOOL)checkAccountUserName:(NSString *) accountString password:(NSString *) passwordString;
++(BOOL)addEvent: (Event *)event;
++(NSArray *) fetchAllEventsBetweenStartDate:(NSDate *)startDate endDate:(NSDate *)endDate;
++(NSArray *) fetchAllEvents;
 @end

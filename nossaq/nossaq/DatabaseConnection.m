@@ -8,6 +8,7 @@
 
 #import "DatabaseConnection.h"
 
+
 @implementation DatabaseConnection
 
 #pragma mark Singleton Implementation
@@ -21,9 +22,9 @@ static DatabaseConnection *sharedObject;
     return sharedObject;
 }
 
-#pragma mark Shared Public Methods
+#pragma mark Account Methods
 
-+(BOOL)addAccountUsername:(NSString *) accountString password:(NSString *) passwordString email:(NSString *) emailString name: (NSString *) nameString surname: (NSString *) surnameString{
++(BOOL)addAccount: (Account *)account{
     
     AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
     
@@ -32,14 +33,18 @@ static DatabaseConnection *sharedObject;
     newContact = [NSEntityDescription
                   insertNewObjectForEntityForName:@"Account"
                   inManagedObjectContext:context];
-    [newContact setValue:accountString forKey:@"username" ];
-    [newContact setValue:passwordString forKey:@"acpass"];
-    [newContact setValue:emailString forKey:@"email"];
-    [newContact setValue:nameString forKey:@"name" ];
-    [newContact setValue:surnameString forKey:@"surname"];
+    [newContact setValue:account.username forKey:@"username" ];
+    [newContact setValue:account.password forKey:@"acpass"];
+    [newContact setValue:account.email forKey:@"email"];
+    [newContact setValue:account.name forKey:@"name" ];
+    [newContact setValue:account.surname forKey:@"surname"];
   
     NSError *error;
-    return [context save:&error]; // YES if the save succeeds, otherwise NO. 
+    BOOL noError = [context save:&error];
+    if(error != NULL){
+        NSLog(@"Error on addAccount method: %@",[error localizedDescription]);
+    }
+    return noError; // YES if the save succeeds, otherwise NO.
 }
 
 +(BOOL)checkAccountUserName:(NSString *) accountString password:(NSString *) passwordString{
@@ -66,4 +71,75 @@ static DatabaseConnection *sharedObject;
         return YES;
     }
 }
+
+#pragma mark Event Methods
+
++(BOOL)addEvent: (Event *)event{
+    
+    AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+    
+    NSManagedObjectContext *context = [appDelegate managedObjectContext];
+    NSManagedObject *newContact;
+    newContact = [NSEntityDescription
+                  insertNewObjectForEntityForName:@"Event"
+                  inManagedObjectContext:context];
+    [newContact setValue:[NSNumber numberWithInt:event.type] forKey:@"type"];
+    [newContact setValue:event.notes forKey:@"notes" ];
+    [newContact setValue:event.title forKey:@"title"];
+    [newContact setValue:event.startDate forKey:@"startDate"];
+    [newContact setValue:event.endDate forKey:@"endDate"];
+    
+    NSError *error;
+    BOOL noError = [context save:&error];
+    if(error != nil){
+        NSLog(@"Error on addEvent method: %@",[error localizedDescription]);
+    }
+    return noError; // YES if the save succeeds, otherwise NO.
+}
+
++ (NSArray *) fetchAllEventsBetweenStartDate:(NSDate *)startDate endDate:(NSDate *)endDate{
+    AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+    NSManagedObjectContext *context =  [appDelegate managedObjectContext];
+    
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entityDesc = [NSEntityDescription entityForName:@"Event" inManagedObjectContext:context];
+    [request setEntity:entityDesc];
+    
+    //Fetch requests sorted
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"startDate" ascending:YES];
+    request.sortDescriptors = [NSArray arrayWithObject:sortDescriptor];
+    
+    NSPredicate *pred = [NSPredicate predicateWithFormat:@"(startDate >= %@ AND endDate <= %@)", startDate, endDate];
+    [request setPredicate:pred];
+    
+    NSError *error;
+    NSArray *objects = [context executeFetchRequest:request error:&error];
+    if (error != nil) {
+        NSLog(@"Error on addEvent method: %@",[error localizedDescription]);
+    }
+    return objects;
+}
++ (NSArray *) fetchAllEvents{
+    AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+    NSManagedObjectContext *context =  [appDelegate managedObjectContext];
+    
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entityDesc = [NSEntityDescription entityForName:@"Event" inManagedObjectContext:context];
+    [request setEntity:entityDesc];
+    
+    //Fetch requests sorted
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"startDate" ascending:YES];
+    request.sortDescriptors = [NSArray arrayWithObject:sortDescriptor];
+
+    NSError *error;
+    NSArray *objects = [context executeFetchRequest:request error:&error];
+    if (error != nil) {
+        NSLog(@"Error on addEvent method: %@",[error localizedDescription]);
+    }
+    return objects;
+}
+
+
+
+
 @end
