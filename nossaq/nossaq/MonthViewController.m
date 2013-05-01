@@ -33,6 +33,7 @@
     [super viewWillAppear:YES];
     self.viewModeSelectionButton.selectedSegmentIndex = 0;
     [self.tableView reloadData];
+    [self.monthView reloadData];
 }
 
 #pragma mark - MonthView Delegate & DataSource
@@ -51,13 +52,6 @@
     NSTimeInterval secondsInEightHours = 60 * 60;
     NSDate *dateHourAdded = [appDelegate.currentStartDate dateByAddingTimeInterval:secondsInEightHours];//Add one hour to start date to create and date
     appDelegate.currentEndDate = dateHourAdded;
-    
-    // CHANGE THE DATE TO YOUR TIMEZONE
-    NSDateComponents *info = [d dateComponentsWithTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0]];
-    NSDate *myTimeZoneDay = [NSDate dateWithDateComponents:info];
-    [myTimeZoneDay dateComponentsWithTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0]];
-	
-	NSLog(@"Date Selected: %@",myTimeZoneDay);
     
     [self.tableView reloadData];
     
@@ -102,7 +96,7 @@
 	// dataArray: has boolean markers for each day to pass to the calendar view (via the delegate function)
 	// dataDictionary: has items that are associated with date keys (for tableview)
 	
-    NSArray *eventsArray = [DatabaseConnection fetchAllEventsBetweenStartDate:start endDate:end];
+    NSArray *eventsArray = [DatabaseConnection fetchEventsBetweenStartDate:start endDate:end];
 	
 	NSLog(@"Delegate Range: %@ %@ %d",start,end,[start daysBetweenDate:end]);
 	
@@ -183,6 +177,22 @@
     
     mainViewController.modalPresentationStyle = UIModalPresentationPageSheet;
     [self presentViewController:mainViewController animated:YES completion:NULL];
+}
+
+- (IBAction)addButton:(id)sender {
+    AddManualEventViewController *controller = [self.storyboard instantiateViewControllerWithIdentifier:@"ManualEventView"];
+    controller.onEditing = NO;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSLog(@"%@",self.monthView.dateSelected);
+    NSArray *eventsArray = [DatabaseConnection fetchEventsOnDate:self.monthView.dateSelected];
+    AddManualEventViewController *controller = [self.storyboard instantiateViewControllerWithIdentifier:@"ManualEventView"];
+    controller.onEditing = YES;
+    controller.editEvent = ((Event *) [eventsArray objectAtIndex:indexPath.row]);
+    [self.navigationController presentViewController:controller animated:YES completion:nil];
+    
 }
 
 @end

@@ -8,9 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import <TapkuLibrary/TapkuLibrary.h>
+#import "AddManualEventViewController.h"
 
 @interface MonthViewController : TKCalendarMonthTableViewController
 - (IBAction)signoutButton:(id)sender;
+- (IBAction)addButton:(id)sender;
 
 @property (strong, nonatomic) UITableView *listView;
 

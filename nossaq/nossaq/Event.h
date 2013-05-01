@@ -12,7 +12,7 @@
 
 @property (strong, nonatomic) NSDate *startDate;
 @property (strong, nonatomic) NSDate *endDate;
-@property (assign) double type; // 0 Manual 1 Auto
+@property (assign) int type; // 0 Manual 1 Auto
 @property (strong, nonatomic) NSString *title;
 @property (strong, nonatomic) NSString *notes;
 

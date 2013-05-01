@@ -15,6 +15,11 @@
 @property (weak, nonatomic) IBOutlet UITextField *startsTextField;
 @property (weak, nonatomic) IBOutlet UITextField *endsTextField;
 
+@property (nonatomic, assign) BOOL onEditing;
+@property (nonatomic, assign) BOOL dateIsChanging;
+@property (weak, nonatomic) Event *editEvent;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *doneButton;
+- (IBAction)dateChangeButton:(id)sender;
 
 - (IBAction)doneButton:(id)sender;
 - (IBAction)cancelButton:(id)sender;

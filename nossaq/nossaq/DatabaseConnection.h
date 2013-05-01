@@ -18,6 +18,9 @@
 +(BOOL)addAccount: (Account *)account;
 +(BOOL)checkAccountUserName:(NSString *) accountString password:(NSString *) passwordString;
 +(BOOL)addEvent: (Event *)event;
-+(NSArray *) fetchAllEventsBetweenStartDate:(NSDate *)startDate endDate:(NSDate *)endDate;
++(NSArray *) fetchEventsBetweenStartDate:(NSDate *)startDate endDate:(NSDate *)endDate;
 +(NSArray *) fetchAllEvents;
++(NSArray *) fetchEventsOnDate:(NSDate *)date;
++(BOOL) updateExistingEvent:(Event *)existingEvent withNewEvent: (Event *)newEvent;
+
 @end

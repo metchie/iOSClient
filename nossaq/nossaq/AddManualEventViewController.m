@@ -33,23 +33,68 @@
     
     [self.view addGestureRecognizer:tap];
     
+    //Set edit view
+    if ([self onEditing]) {
+        
+        [[self modeSelectionBut] setHidden:YES];//set mode button invisible
+        
+        [[self doneButton] setTitle:@"Update"];
+        
+        [self titleTextField].text = [[self editEvent] title];
+        [self notesTextField].text = [[self editEvent] notes];
+        
+        NSString *startDateString = [NSDateFormatter localizedStringFromDate: [[self editEvent] startDate]
+                                                                   dateStyle:NSDateFormatterLongStyle
+                                                                   timeStyle:NSDateFormatterShortStyle];
+        
+        [self startsTextField].text = startDateString;
+        
+        NSString *endDateString = [NSDateFormatter localizedStringFromDate: [[self editEvent] endDate]
+                                                                 dateStyle:NSDateFormatterLongStyle
+                                                                 timeStyle:NSDateFormatterShortStyle];
+        
+        [self endsTextField].text = endDateString;
+    }
+    else {
+        
+        //Initialize current date
+        AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+        
+        NSString *startDateString = [NSDateFormatter localizedStringFromDate: appDelegate.currentStartDate
+                                                                   dateStyle:NSDateFormatterLongStyle
+                                                                   timeStyle:NSDateFormatterShortStyle];
+        
+        NSString *endDateString = [NSDateFormatter localizedStringFromDate: appDelegate.currentEndDate
+                                                                 dateStyle:NSDateFormatterLongStyle
+                                                                 timeStyle:NSDateFormatterShortStyle];
+        
+        [[self startsTextField]setText:startDateString];
+        [[self endsTextField] setText:endDateString];
+        
+    }
+    
 }
 - (void) viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     self.modeSelectionBut.selectedSegmentIndex = 0;
-    //Initialize current date
-    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     
-    NSString *startDateString = [NSDateFormatter localizedStringFromDate: appDelegate.currentStartDate
-                                                               dateStyle:NSDateFormatterLongStyle
-                                                               timeStyle:NSDateFormatterShortStyle];
-    
-    NSString *endDateString = [NSDateFormatter localizedStringFromDate: appDelegate.currentEndDate
-                                                             dateStyle:NSDateFormatterLongStyle
-                                                             timeStyle:NSDateFormatterShortStyle];
-    
-    [[self startsTextField]setText:startDateString];
-    [[self endsTextField] setText:endDateString];
+    if ([self dateIsChanging]) {
+        //Initialize current date
+        AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+        
+        NSString *startDateString = [NSDateFormatter localizedStringFromDate: appDelegate.currentStartDate
+                                                                   dateStyle:NSDateFormatterLongStyle
+                                                                   timeStyle:NSDateFormatterShortStyle];
+        
+        NSString *endDateString = [NSDateFormatter localizedStringFromDate: appDelegate.currentEndDate
+                                                                 dateStyle:NSDateFormatterLongStyle
+                                                                 timeStyle:NSDateFormatterShortStyle];
+        
+        [[self startsTextField]setText:startDateString];
+        [[self endsTextField] setText:endDateString];
+        self.dateIsChanging = NO;
+        
+    }
 }
 - (void)didReceiveMemoryWarning
 {
@@ -75,7 +120,12 @@
     [self.notesTextField resignFirstResponder];
 }
 
+- (IBAction)dateChangeButton:(id)sender {
+    self.dateIsChanging = YES;
+}
+
 - (IBAction)doneButton:(id)sender {
+    
     AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
     
     //Create Event Data Object
@@ -86,20 +136,41 @@
     event.notes = [[self notesTextField] text];
     event.type = MANUAL_EVENT;
     
-    BOOL dataAdded = [DatabaseConnection addEvent: event];
+    if (![self onEditing]) { // creating new event
+        
+        
+        BOOL dataAdded = [DatabaseConnection addEvent: event];
+        
+        if (dataAdded) {
+            [self dismissViewControllerAnimated:YES completion:nil];
+            
+        }
+        else{
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error on adding events"
+                                                            message:@""
+                                                           delegate:self
+                                                  cancelButtonTitle:@"OK"
+                                                  otherButtonTitles:nil];
+            [alert show];
+        }
+    }
+    else{// updating an event
+        
+        BOOL dataAdded = [DatabaseConnection updateExistingEvent:[self editEvent] withNewEvent:event];
+        if (dataAdded) {
+            [self dismissViewControllerAnimated:YES completion:nil];
+            
+        }
+        else{
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error on updating event"
+                                                            message:@""
+                                                           delegate:self
+                                                  cancelButtonTitle:@"OK"
+                                                  otherButtonTitles:nil];
+            [alert show];
+        }
+    }
     
-    if (dataAdded) {
-        [self dismissViewControllerAnimated:YES completion:nil];
-
-    }
-    else{
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error on database"
-                                                        message:@""
-                                                       delegate:self
-                                              cancelButtonTitle:@"OK"
-                                              otherButtonTitles:nil];
-        [alert show];
-    }
 }
 
 - (IBAction)cancelButton:(id)sender {

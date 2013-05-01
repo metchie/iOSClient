@@ -38,7 +38,7 @@ static DatabaseConnection *sharedObject;
     [newContact setValue:account.email forKey:@"email"];
     [newContact setValue:account.name forKey:@"name" ];
     [newContact setValue:account.surname forKey:@"surname"];
-  
+    
     NSError *error;
     BOOL noError = [context save:&error];
     if(error != NULL){
@@ -97,7 +97,7 @@ static DatabaseConnection *sharedObject;
     return noError; // YES if the save succeeds, otherwise NO.
 }
 
-+ (NSArray *) fetchAllEventsBetweenStartDate:(NSDate *)startDate endDate:(NSDate *)endDate{
++ (NSArray *) fetchEventsBetweenStartDate:(NSDate *)startDate endDate:(NSDate *)endDate{
     AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
     NSManagedObjectContext *context =  [appDelegate managedObjectContext];
     
@@ -130,7 +130,7 @@ static DatabaseConnection *sharedObject;
     //Fetch requests sorted
     NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"startDate" ascending:YES];
     request.sortDescriptors = [NSArray arrayWithObject:sortDescriptor];
-
+    
     NSError *error;
     NSArray *objects = [context executeFetchRequest:request error:&error];
     if (error != nil) {
@@ -138,6 +138,71 @@ static DatabaseConnection *sharedObject;
     }
     return objects;
 }
+
++ (NSArray *) fetchEventsOnDate:(NSDate *)date{
+    AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+    NSManagedObjectContext *context =  [appDelegate managedObjectContext];
+    
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entityDesc = [NSEntityDescription entityForName:@"Event" inManagedObjectContext:context];
+    [request setEntity:entityDesc];
+    
+    //Fetch requests sorted
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"startDate" ascending:YES];
+    request.sortDescriptors = [NSArray arrayWithObject:sortDescriptor];
+    
+    NSTimeInterval secondsInTwentyFourHours = 24 * 60 * 60;
+    NSDate *dateLastHour = [date dateByAddingTimeInterval:secondsInTwentyFourHours];
+    
+    NSPredicate *pred = [NSPredicate predicateWithFormat:@"(startDate >= %@ AND endDate <= %@)", date, dateLastHour];
+    [request setPredicate:pred];
+    
+    NSError *error;
+    NSArray *objects = [context executeFetchRequest:request error:&error];
+    if (error != nil) {
+        NSLog(@"Error on addEvent method: %@",[error localizedDescription]);
+    }
+    return objects;
+}
++ (BOOL) updateExistingEvent:(Event *)existingEvent withNewEvent: (Event *)newEvent{// return YES if event succesfuly added
+    AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+    NSManagedObjectContext *context =  [appDelegate managedObjectContext];
+    
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entityDesc = [NSEntityDescription entityForName:@"Event" inManagedObjectContext:context];
+    [request setEntity:entityDesc];
+    
+    NSPredicate *pred = [NSPredicate predicateWithFormat:@"(type == %@ AND notes == %@ AND title == %@ AND startDate == %@ AND endDate == %@)", existingEvent.type, existingEvent.notes, existingEvent.title, existingEvent.startDate, existingEvent.endDate];
+    [request setPredicate:pred];
+    
+    NSError *error;
+    NSArray *objects = [context executeFetchRequest:request error:&error];
+    if (error != nil) {
+        NSLog(@"Error on addEvent method: %@",[error localizedDescription]);
+        return NO;
+    }
+    
+    if(objects.count > 1){
+        NSLog(@"Possible dublicate in database updateExistingEvent method");
+        return NO;
+    }
+    
+    Event *event = [objects objectAtIndex:0];
+    event.title = newEvent.title;
+    event.type = newEvent.type;
+    event.notes = newEvent.notes;
+    event.startDate = newEvent.startDate;
+    event.endDate = newEvent.endDate;
+    
+    if (![context save:&error]) {
+        NSLog(@"Error savinng record updateExistingEvent method");
+
+        return NO;
+    }
+    
+    return YES;
+}
+
 
 
 
